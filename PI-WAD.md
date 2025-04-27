@@ -29,7 +29,7 @@ Com isso, o sistema desenvolvido terá ferramentas que irão ajudar os alunos a 
 
 <div align="center">
   <sub>Persona</sub><br>
-  <img src="../assets/PERSONA.jpeg" width="80%">
+  <img src="../assets/Persona.jpeg" width="80%">
 </div>
 
 ### 2.2. User Stories (Semana 01)
