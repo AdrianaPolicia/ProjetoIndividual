@@ -27,7 +27,7 @@ Com isso, o sistema desenvolvido terá ferramentas que irão ajudar os alunos a 
 
 ### 2.1. Personas (Semana 01)
 
-<div align="center"> <sub>Persona</sub><br> <img src="../assets/Persona.png" width="100%" alt="modelo"><br></div>
+<div align="center"> <sub>Persona</sub><br> <img src="../assets/persona.jpeg" width="100%" alt="modelo"><br></div>
 
 ### 2.2. User Stories (Semana 01)
 
