@@ -27,10 +27,7 @@ Com isso, o sistema desenvolvido terá ferramentas que irão ajudar os alunos a 
 
 ### 2.1. Personas (Semana 01)
 
-<div align="center">
-  <sub>Persona</sub><br>
-  <img src="assets/Persona.jpeg" width="80%">
-</div>
+<div align="center"> <sub>Persona</sub><br> <img src="../assets/Persona.png" width="100%" alt="modelo"><br></div>
 
 ### 2.2. User Stories (Semana 01)
 
@@ -54,9 +51,94 @@ Explicação INVEST do US03:
 
 ### 3.1. Modelagem do banco de dados  (Semana 3)
 
-*Posicione aqui os diagramas de modelos relacionais do seu banco de dados, apresentando todos os esquemas de tabelas e suas relações. Utilize texto para complementar suas explicações, se necessário.*
+<div align="center"> <sub>Diagrama relacional do banco de dados completo:</sub><br> <img src="../assets/modelo-banco2.png" width="100%" alt="modelo"><br></div>
 
-*Posicione também o modelo físico com o Schema do BD (arquivo .sql)*
+#### Entidades e Relacionamentos:
+
+#### Usuários (`usuarios`)
+Representam os usuários do sistema, ou seja, as pessoas que agendam as salas.
+
+- Nome completo
+
+- E-mail (único)
+
+- Senha criptografada
+
+- Turma
+
+- Grupo
+
+**Relacionamentos:**
+
+- Um usuário pode fazer um único agendamento por vez
+
+- Um usuário pode registrar várias reclamações
+
+#### Salas (`salas`)
+Representam as salas físicas disponíveis para reserva.
+
+- Número/código da sala (ex: R07)
+
+**Relacionamentos:**
+
+- Uma sala pode estar presente em vários agendamentos
+
+- Uma sala pode receber várias reclamações
+
+#### Horários (horarios)
+Blocos de tempo fixos de 30 minutos entre 08:00 e 20:00.
+
+- Horário de início
+
+- Horário de fim
+
+**Relacionamentos:**
+
+- Um horário pode estar presente em vários agendamentos
+
+- Um horário pode ser referenciado em várias reclamações
+
+#### Agendamentos (agendamentos)
+Representam a reserva de uma sala feita por um usuário para um horário específico em uma data.
+
+- Data da reserva
+
+- Sala reservada
+
+- Horário reservado
+
+- Usuário responsável
+
+- Data de criação do agendamento
+
+**Relacionamentos:**
+
+- Cada agendamento está vinculado a um usuário, uma sala e um horário
+
+- Um usuário só pode ter um agendamento ativo por vez
+
+#### Reclamações (reclamacoes)
+Representam relatos de problemas com salas, como ar-condicionado, mesa, etc.
+
+- Sala onde ocorreu o problema
+
+- Horário em que a sala foi usada
+
+- Data do uso
+
+- Descrição do problema
+
+- Usuário que reclamou
+
+**Relacionamentos:**
+
+- Cada reclamação está vinculada a um usuário, uma sala e um horário
+
+<div align="center"> <sub>Diagrama de estrutura do banco de dados completo:</sub><br> <img src="../assets/modelo-banco.png" width="100%" alt="modelo"><br> <sup>Fonte: Desenvolvido por Adriana</sup> </div>
+
+#### Modelo Físico com o Schema do BD
+📥 [Schema SQL completo](../scripts/init.sql)
+
 
 ### 3.1.1 BD e Models (Semana 5)
 *Descreva aqui os Models implementados no sistema web*
@@ -74,7 +156,23 @@ Explicação INVEST do US03:
 
 ### 3.3. Wireframes (Semana 03)
 
-*Posicione aqui as imagens do wireframe construído para sua solução e, opcionalmente, o link para acesso (mantenha o link sempre público para visualização).*
+- **Login:** esta será a primeira tela que o usuário vai ver ao entrar na aplicação, ao inserir seu email e senha e confirmar ele estará livre para navegar pelas próximas páginas. 
+<div align="center"> <sub>Wireframe da tela de login:</sub><br> <img src="../assets/login.png" width="100%" alt="modelo"><br> </div>
+
+- **Agendar Horários:** na parte de Agendar o usuário vai se deparar com todos o horários possíveis para reservar uma sala ao longo do dia.
+<div align="center"> <sub>Wireframe da primeira tela de agendamento:</sub><br> <img src="../assets/agendar1.png" width="100%" alt="modelo"><br></div> 
+
+- **Agendar Sala:** após selecionar um horário o usuário será direcionada para uma tela onde aparecerá as salas disponíveis (que não estão reservadas) nesse horário específico.
+<div align="center"> <sub>Wireframe da segunda tela de agendamento:</sub><br> <img src="../assets/agendar2.png" width="100%" alt="modelo"><br></div> 
+
+- **Informações de Agendamento:** após selecionar uma sala, o usuário terá que informar o seu nome completo, turma e grupo para que todas as informções sejam armazenadas e organizadas. 
+<div align="center"> <sub>Wireframe da terceira tela de agendamento:</sub><br> <img src="../assets/agendar3.png" width="100%" alt="modelo"><br></div> 
+
+- **Agendada:** nessa parte o usuário poderá ver a sala e o horário que agendou, além de poder cancelar caso não precise mais.
+<div align="center"> <sub>Wireframe da tela da sala agendada:</sub><br> <img src="../assets/agendada.png" width="100%" alt="modelo"><br></div> 
+
+- **Reclamações:** nessa aba o usuário poderá relatar qualquer problema que teve na sala, como por exemplo um erro no ar-condicionado, informando o número da sala, o horário de uso daquela sala e uma descrição do problema encontrado.
+<div align="center"> <sub>Wireframe da primeira tela de reclamações:</sub><br> <img src="../assets/reclamacoes.png" width="100%" alt="modelo"><br></div>  
 
 ### 3.4. Guia de estilos (Semana 05)
 
