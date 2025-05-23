@@ -1,34 +1,34 @@
 const db = require('../config/db');
 
 class User {
-  static async getAll() {
-    const result = await db.query('SELECT * FROM users');
+  static async getAllUsers() {
+    const result = await db.query('SELECT * FROM usuarios');
     return result.rows;
   }
 
-  static async getById(id) {
-    const result = await db.query('SELECT * FROM users WHERE id = $1', [id]);
+  static async getUserById(id) {
+    const result = await db.query('SELECT * FROM usuarios WHERE id = $1', [id]);
     return result.rows[0];
   }
 
-  static async create(data) {
+  static async createUser(data) {
     const result = await db.query(
-      'INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *',
-      [data.name, data.email]
+      'INSERT INTO usuarios (nome_completo, email, senha_hash, turma, grupo) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [data.nome_completo, data.email, data.senha_hash, data.turma, data.grupo]
     );
     return result.rows[0];
   }
 
-  static async update(id, data) {
+  static async updateUser(id, data) {
     const result = await db.query(
-      'UPDATE users SET name = $1, email = $2 WHERE id = $3 RETURNING *',
-      [data.name, data.email, id]
+      'UPDATE usuarios SET nome_completo = $1, email = $2, senha_hash = $3, turma = $4, grupo = $5 WHERE id = $6 RETURNING *',
+      [data.nome_completo, data.email, data.senha_hash, data.turma, data.grupo, id]
     );
     return result.rows[0];
   }
 
-  static async delete(id) {
-    const result = await db.query('DELETE FROM users WHERE id = $1 RETURNING *', [id]);
+  static async deleteUser(id) {
+    const result = await db.query('DELETE FROM usuarios WHERE id = $1 RETURNING *', [id]);
     return result.rowCount > 0;
   }
 }
