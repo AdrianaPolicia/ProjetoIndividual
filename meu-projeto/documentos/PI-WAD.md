@@ -213,6 +213,7 @@ O guia de estilos tem como objetivo padronizar o desenvolvimento de uma interfac
 Para mais informações sobre o Layout Geral do projeto e uma visualização melhor, entre neste link: https://www.figma.com/design/cnJg4qv0v5QnYuTUXReWOh/ux?node-id=2065-197&m=dev&t=fm6ftigwHI33YodZ-1
 
 ### 3.5. Protótipo de alta fidelidade (Semana 05)
+Um protótipo de alta fidelidade é uma representação visual e funcional muito próxima do produto final. Ele simula de forma realista tanto o design visual quanto a interatividade entre telas. Assim, abaixo é possível visualizar os protótipos deste projeto:
 
 <div align="center"> <sub>Protótipo da tela de login:</sub><br> <img src="../assets/Login Protótipo.png" width="100%" alt="modelo"><br></div> 
 
