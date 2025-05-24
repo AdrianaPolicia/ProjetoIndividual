@@ -176,12 +176,59 @@ Representam relatos de problemas com salas, como ar-condicionado, mesa, etc.
 
 ### 3.4. Guia de estilos (Semana 05)
 
-*Descreva aqui orientações gerais para o leitor sobre como utilizar os componentes do guia de estilos de sua solução.*
+O guia de estilos tem como objetivo padronizar o desenvolvimento de uma interface, garantindo uma experiência consistente, agradável e intuitiva para o usuário. Ele deve ser utilizado como referência no desenvolvimento e na manutenção da aplicação. Assim, esses foram os elementos utilizados no projeto:
 
+<div align="center"> <sub>Mini Guia de Estilos:</sub><br> <img src="../assets/Mini Guia de Estilos.png" width="100%" alt="modelo"><br></div> 
+
+## Cores:
+- Primária: #665390 (Roxo) — para elementos de destaque, como botões principais, barras de navegação e títulos ativos.
+
+
+- Secundárias:
+    - #000000 (Preto) — para textos principais.
+    - #FFFFFF (Branco) — para fundos e textos sobre fundos escuros.
+    - #D9D9D9 (Cinza Claro) — para divisores, botões secundários e fundos neutros.
+    - #726F6F (Cinza Escuro) — para textos secundários, informações complementares e ícones menos relevantes.
+
+## Tipografia: 
+- H1: títulos principais (como o nome da tela).
+- H2: subtítulos ou seções importantes.
+- H3 a H6: textos auxiliares, subtítulos menores e descrições.
+- P: textos corridos, instruções e descrições detalhadas.
+
+## Ícones:
+- Voltar (seta): retorna à tela anterior.
+- Agendar (calendário): acessa a tela de seleção de horários.
+- Agendada (olho): visualiza agendamentos já feitos.
+- Suporte (ponto de exclamação): acessa a tela de contato para suporte.
+- Salas de grupo (casa): indica salas destinadas a reuniões em grupo.
+- Salas individuais (salinha pequena): indica salas para uso individual.
+- Cancelar (X): cancela um agendamento feito.
+
+## Componentes e Navegação: 
+- Botões: estão na cor primária (roxa) para ações principais e cinza claro para ações secundárias.
+- Inputs: estão em fundo branco com bordas cinza claro para clareza e foco no preenchimento.
+- Confirmações e Alertas: á a caixa modal (como na tela de cancelamento) com botões claros para "Sim" e "Não".
+
+Para mais informações sobre o Layout Geral do projeto e uma visualização melhor, entre neste link: https://www.figma.com/design/cnJg4qv0v5QnYuTUXReWOh/ux?node-id=2065-197&m=dev&t=fm6ftigwHI33YodZ-1
 
 ### 3.5. Protótipo de alta fidelidade (Semana 05)
 
-*Posicione aqui algumas imagens demonstrativas de seu protótipo de alta fidelidade e o link para acesso ao protótipo completo (mantenha o link sempre público para visualização).*
+<div align="center"> <sub>Protótipo da tela de login:</sub><br> <img src="../assets/Login Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da primeira tela de agendamento:</sub><br> <img src="../assets/Agendar1 Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da segunda tela de agendamento:</sub><br> <img src="../assets/Agendar2 Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da terceira tela de agendamento:</sub><br> <img src="../assets/Agendar3 Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da primeira tela de agendada:</sub><br> <img src="../assets/Agendada1 Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da segunda tela de agendada:</sub><br> <img src="../assets/Agendada2 Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+<div align="center"> <sub>Protótipo da tela de suporte:</sub><br> <img src="../assets/Suporte Protótipo.png" width="100%" alt="modelo"><br></div> 
+
+Aqui está o link para acessar os protótipos pelo figma: https://www.figma.com/design/cnJg4qv0v5QnYuTUXReWOh/ux?node-id=2065-197&m=dev&t=fm6ftigwHI33YodZ-1
 
 ### 3.6. WebAPI e endpoints (Semana 05)
 
