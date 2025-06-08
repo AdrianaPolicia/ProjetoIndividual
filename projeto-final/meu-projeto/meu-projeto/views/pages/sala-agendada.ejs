@@ -1,0 +1,67 @@
+<div class="sala-agendada-container">
+  <h1>Sala Agendada</h1>
+  
+  <div class="agendamento-card">
+    <div class="agendamento-info">
+      <div class="horario-info">
+        <span class="horario"><%= agendamento?.horario || '13:00' %></span>
+      </div>
+      <div class="sala-info">
+        <span class="sala"><%= agendamento?.sala || 'R03' %></span>
+      </div>
+      <div class="cancelar-btn">
+        <button onclick="cancelarAgendamento('<%= agendamento?.id %>')" class="btn-cancelar">✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmação de cancelamento -->
+<div id="modal-cancelar" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Tem certeza que deseja cancelar?</h3>
+    <div class="modal-actions">
+      <button onclick="fecharModal()" class="btn btn-secondary">Não</button>
+      <button onclick="confirmarCancelamento()" class="btn btn-primary">Sim</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let agendamentoIdParaCancelar = null;
+
+function cancelarAgendamento(id) {
+  agendamentoIdParaCancelar = id;
+  document.getElementById('modal-cancelar').style.display = 'flex';
+}
+
+function fecharModal() {
+  document.getElementById('modal-cancelar').style.display = 'none';
+  agendamentoIdParaCancelar = null;
+}
+
+function confirmarCancelamento() {
+  if (agendamentoIdParaCancelar) {
+    fetch(`/agendamento/${agendamentoIdParaCancelar}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        window.location.reload();
+      } else {
+        alert('Erro ao cancelar agendamento');
+      }
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+      alert('Erro ao cancelar agendamento');
+    });
+  }
+  fecharModal();
+}
+</script>
+

@@ -6,11 +6,12 @@
   <title><%= pageTitle %></title>  
   <style>
     <%- include('../css/style.css'); %>
+    <% if (typeof cssFile !== 'undefined') { %>
+      <%- include('../css/' + cssFile); %>
+    <% } %>
   </style>
 </head>
 <body>
-  <!-- Inclui o cabeçalho como um partial -->
-  <%- include('../components/header') %>
 
   <main>
     <!-- Renderiza o conteúdo da página específica -->
@@ -19,7 +20,7 @@
 
   <footer>
     <!-- Rodapé comum aqui -->
-    <p>Rodapé da Aplicação</p>
+    <p>&copy; 2024 Instituto de Tecnologia e Liderança - Inteli</p>
   </footer>
 
   <!-- Adicione scripts JS se necessário -->
@@ -27,3 +28,4 @@
   
 </body>
 </html>
+

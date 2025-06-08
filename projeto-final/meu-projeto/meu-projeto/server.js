@@ -1,9 +1,18 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Middleware para processar JSON
+// Configurar EJS como template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Middleware para processar JSON e form data
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Servir arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Rotas
 const routes = require('./routes/index');
@@ -25,6 +34,7 @@ const reclamacaoRoutes = require('./routes/reclamacaoRoutes');
 app.use('/reclamacao', reclamacaoRoutes);
 
 // Inicializa o servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+

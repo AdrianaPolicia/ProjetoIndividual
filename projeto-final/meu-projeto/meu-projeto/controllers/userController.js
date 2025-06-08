@@ -61,10 +61,42 @@ const deleteUser = async (req, res) => {
   }
 };
 
+// Método de login
+const loginUser = async (req, res) => {
+  try {
+    const { email, senha } = req.body;
+    
+    // Para fins de demonstração, vamos apenas redirecionar para a página de horários
+    // Em um sistema real, você verificaria as credenciais no banco de dados
+    
+    // Simulando um login bem-sucedido
+    if (email && senha) {
+      return res.redirect('/horarios');
+    }
+    
+    // Se as credenciais estiverem incorretas
+    res.render('layout/main', {
+      pageTitle: 'Login - Inteli',
+      content: '../pages/login',
+      cssFile: 'login.css',
+      error: 'Email ou senha incorretos'
+    });
+  } catch (error) {
+    res.status(500).render('layout/main', {
+      pageTitle: 'Login - Inteli',
+      content: '../pages/login',
+      cssFile: 'login.css',
+      error: 'Erro ao fazer login'
+    });
+  }
+};
+
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  loginUser
 };
+
