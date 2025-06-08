@@ -506,8 +506,6 @@ Esses dois códigos acima são um modelo do código que foi utilizado para todas
 
 <div align="center"> <sub>Tela de Suporte:</sub><br> <img src="../assets/suportesite.png" width="100%" alt="modelo"><br></div> 
 
-*Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
-
 ---
 
 ## <a name="c4"></a>4. Desenvolvimento da Aplicação Web (Semana 8)
