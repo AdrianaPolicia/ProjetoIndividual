@@ -351,6 +351,161 @@ Endpoints Implementados no Sistema Web
 
 ### 3.7 Interface e Navegação (Semana 07)
 
+**Estrutura do código frontend** 
+O frontend foi desenvolvido utilizando EJS (Embedded JavaScript) como template engine para as views e CSS para a estilização. A estrutura de arquivos segue a organização MVC:
+- views/layout/main.ejs: Layout principal que define a estrutura comum a todas as páginas (cabeçalho, rodapé, inclusão de CSS e scripts).
+- views/layout/login_layout.ejs: Layout específico para a página de login, sem o cabeçalho de navegação.
+- views/components/header.ejs: Componente reutilizável para o cabeçalho de navegação.
+- views/pages/: Contém os arquivos EJS para cada página específica do sistema (login, horários, salas disponíveis, informações de agendamento, sala agendada, suporte).
+- views/css/: Contém os arquivos CSS para estilização global (style.css) e específica de cada página (login.css, horarios.css, etc.).
+- public/js/script.js: Arquivo JavaScript para interações no frontend e integração com o backend via Fetch API.
+
+Cada tela do sistema foi desenvolvida para replicar o design dos protótipos, utilizando EJS para a estrutura HTML e CSS para a aparência. Abaixo, estão as principais telas e suas implementações:
+
+**1. Tela de Login**
+
+<div align="center"> <sub>Tela de Login no site:</sub><br> <img src="../assets/loginsite.png" width="100%" alt="modelo"><br></div> 
+
++ Código views/pages/login.ejs:
+
+```javascript
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Inteli</title>
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <img src="/assetspublic/logointeli.png" alt="Logo Inteli" class="logo" />
+      </div>
+      <form action="/user/login" method="POST" class="login-form">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="exemplo@sou.inteli.edu.br" required />
+        
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" placeholder="********" required />
+        
+        <% if (typeof error !== 'undefined') { %>
+          <p class="erro"><%= error %></p>
+        <% } %>
+
+        <button type="submit">Confirmar</button>
+      </form>
+    </div>
+  </div
+```
+
++ Estilização (views/css/login.css):
+
+```javascript
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("assetspublic/backgroundlogin.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-box {
+    background-color: white;
+    border-radius: 30px;
+    width: 400px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .login-header {
+    background-color: #6c4bb6;
+    padding: 30px 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: -40px -40px 30px;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .login-form button {
+    background-color: #6b5b95;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #6b5b95;
+  }
+  
+  .erro {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+```
+Esses dois códigos acima são um modelo do código que foi utilizado para todas as telas, cada uma com suas características específicas mas com o mesmo padrão e função.
+
+**2. Tela de Horários**
+
+<div align="center"> <sub>Tela de Horários no site:</sub><br> <img src="../assets/horariossite.png" width="100%" alt="modelo"><br></div> 
+
+**3. Tela de Salas Disponíveis**
+
+<div align="center"> <sub>Tela de Salas Disponíveis no site:</sub><br> <img src="../assets/salasdisponiveissite.png" width="100%" alt="modelo"><br></div> 
+
+**4. Tela de Informações de Agendamento**
+
+<div align="center"> <sub>Tela de Informações de Agendamento no site:</sub><br> <img src="../assets/informacoesdeagendamentosite.png" width="100%" alt="modelo"><br></div> 
+
+**5. Tela de Informações de Sala Agendada**
+
+<div align="center"> <sub>Tela de Sala Agendada no site:</sub><br> <img src="../assets/salaagendadasite.png" width="100%" alt="modelo"><br></div> 
+
+**6. Tela de Cancelamento**
+
+<div align="center"> <sub>Tela de Cancelamento no site:</sub><br> <img src="../assets/cancelarsite.png" width="100%" alt="modelo"><br></div> 
+
+**6. Tela de Suporte**
+
+<div align="center"> <sub>Tela de Suporte:</sub><br> <img src="../assets/suportesite.png" width="100%" alt="modelo"><br></div> 
+
 *Descreva e ilustre aqui o desenvolvimento do frontend do sistema web, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
 
 ---
