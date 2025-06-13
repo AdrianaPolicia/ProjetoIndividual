@@ -1,0 +1,57 @@
+/* Estilos para a página de horários */
+.horarios-container {
+  padding: 20px 0;
+}
+
+.horarios-container h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: left;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 100%;
+}
+
+.horario-item {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.horario-link {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.horario-link:hover {
+  background-color: #d0d0d0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .horarios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .horarios-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .horario-link {
+    font-size: 18px;
+  }
+}
+

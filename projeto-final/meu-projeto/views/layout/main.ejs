@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>  
+  <style>
+    <%- include('../css/style.css'); %>
+    <% if (typeof cssFile !== 'undefined') { %>
+      <%- include('../css/' + cssFile); %>
+    <% } %>
+  </style>
+</head>
+<body>
+  <!-- Inclui o cabeçalho como um partial -->
+  <%- include('../components/header') %>
+
+  <main>
+    <!-- Renderiza o conteúdo da página específica -->
+    <%- include(content) %>
+  </main>
+
+  <!-- Adicione scripts JS se necessário -->
+  <script src="/js/script.js"></script>
+  
+</body>
+</html>
+
