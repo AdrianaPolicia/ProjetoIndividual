@@ -1,10 +1,8 @@
 # Web Application Document - Projeto Individual - Módulo 2 - Inteli
 
-**_Os trechos em itálico servem apenas como guia para o preenchimento da seção. Por esse motivo, não devem fazer parte da documentação final._**
+## Agendamento de Salas
 
-## Nome do Projeto
-
-#### Autor do projeto
+#### Autor do projeto: Adriana Fernandes Polícia
 
 ## Sumário
 
@@ -59,19 +57,13 @@ Explicação INVEST do US03:
 Representam os usuários do sistema, ou seja, as pessoas que agendam as salas.
 
 - Nome completo
-
 - E-mail (único)
-
 - Senha criptografada
-
 - Turma
-
 - Grupo
 
 **Relacionamentos:**
-
 - Um usuário pode fazer um único agendamento por vez
-
 - Um usuário pode registrar várias reclamações
 
 #### Salas (`salas`)
@@ -80,60 +72,45 @@ Representam as salas físicas disponíveis para reserva.
 - Número/código da sala (ex: R07)
 
 **Relacionamentos:**
-
 - Uma sala pode estar presente em vários agendamentos
-
 - Uma sala pode receber várias reclamações
 
-#### Horários (horarios)
+#### Horários (`horarios`)
 Blocos de tempo fixos de 30 minutos entre 08:00 e 20:00.
 
 - Horário de início
-
 - Horário de fim
 
 **Relacionamentos:**
-
 - Um horário pode estar presente em vários agendamentos
-
 - Um horário pode ser referenciado em várias reclamações
 
-#### Agendamentos (agendamentos)
+#### Agendamentos (`agendamentos`)
 Representam a reserva de uma sala feita por um usuário para um horário específico em uma data.
-
 - Data da reserva
-
 - Sala reservada
-
 - Horário reservado
-
 - Usuário responsável
-
 - Data de criação do agendamento
 
 **Relacionamentos:**
-
 - Cada agendamento está vinculado a um usuário, uma sala e um horário
-
 - Um usuário só pode ter um agendamento ativo por vez
 
-#### Reclamações (reclamacoes)
+#### Reclamações (`reclamacoes`)
 Representam relatos de problemas com salas, como ar-condicionado, mesa, etc.
 
 - Sala onde ocorreu o problema
-
 - Horário em que a sala foi usada
-
 - Data do uso
-
 - Descrição do problema
-
 - Usuário que reclamou
 
 **Relacionamentos:**
 
 - Cada reclamação está vinculada a um usuário, uma sala e um horário
 
+#### Diagrama de estrutura do banco de dados:
 <div align="center"> <sub>Diagrama de estrutura do banco de dados completo:</sub><br> <img src="../assets/modelo-banco.png" width="100%" alt="modelo"><br> <sup>Fonte: Desenvolvido por Adriana</sup> </div>
 
 #### Modelo Físico com o Schema do BD
@@ -144,24 +121,24 @@ Representam relatos de problemas com salas, como ar-condicionado, mesa, etc.
 
 O model é a parte do sistema responsável por representar e gerenciar os dados, fazendo a comunicação direta com o banco de dados. Ele define quais informações serão armazenadas, como, e permite realizar operações como buscar, criar, atualizar e deletar registros. No desenvolvimento web, o model ajuda a organizar o código, separando a parte dos dados das outras partes do sistema, como as regras de negócio e as rotas
 
-## Models Implementados no Sistema Web
-## 1. UserModel (Usuário)
+### Models Implementados no Sistema Web
+#### 1. UserModel (Usuário)
 - Descrição: Representa os usuários do sistema.
 - Atributos principais: id; nome_completo; email; senha_hash; turma; grupo
 - Funções implementadas: listar todos os usuários; buscar usuário por ID; criar novo usuário; atualizar dados de um usuário; deletar usuário.
-## 2. SalaModel (Sala)
+#### 2. SalaModel (Sala)
 - Descrição: Representa as salas que podem ser reservadas.
 - Atributos principais: id; numero_sala.
 - Funções implementadas: listar todas as salas; buscar sala por ID; criar nova sala; atualizar informações da sala; deletar sala.
-## 3. HorarioModel (Horário)
+#### 3. HorarioModel (Horário)
 - Descrição: Define os horários disponíveis para reserva.
 - Atributos principais: id; horario_inicio; horario_fim
 - Funções implementadas: listar todos os horários; buscar horário por ID; criar novo horário; atualizar horário; deletar horário.
-## 4. AgendamentoModel (Agendamento)
+#### 4. AgendamentoModel (Agendamento)
 - Descrição: Gerencia os agendamentos feitos pelos usuários.
 - Atributos principais: id; usuario_id; sala_id; horario_id; data; croado_em.
 - Funções implementadas: listar todos os agendamentos; buscar agendamento por ID; criar novo agendamento; atualizar informações do agendamento; cancelar (deletar) agendamento.
-## 5. ReclamacaoModel (Reclamação)
+#### 5. ReclamacaoModel (Reclamação)
 - Descrição: Permite que usuários registrem reclamações relacionadas ao uso das salas ou do sistema.
 - Atributos principais: id; usuario_id; sala_id; horario_id; data; descricao; criado_em.
 - Funções implementadas: listar todas as reclamações; buscar reclamação por ID; registrar nova reclamação; atualizar reclamação; excluir reclamação.
@@ -248,7 +225,7 @@ O guia de estilos tem como objetivo padronizar o desenvolvimento de uma interfac
 
 <div align="center"> <sub>Mini Guia de Estilos:</sub><br> <img src="../assets/Mini Guia de Estilos.png" width="100%" alt="modelo"><br></div> 
 
-## Cores:
+#### Cores:
 - Primária: #665390 (Roxo) — para elementos de destaque, como botões principais, barras de navegação e títulos ativos.
 
 
@@ -258,13 +235,13 @@ O guia de estilos tem como objetivo padronizar o desenvolvimento de uma interfac
     - #D9D9D9 (Cinza Claro) — para divisores, botões secundários e fundos neutros.
     - #726F6F (Cinza Escuro) — para textos secundários, informações complementares e ícones menos relevantes.
 
-## Tipografia: 
+#### Tipografia: 
 - H1: títulos principais (como o nome da tela).
 - H2: subtítulos ou seções importantes.
 - H3 a H6: textos auxiliares, subtítulos menores e descrições.
 - P: textos corridos, instruções e descrições detalhadas.
 
-## Ícones:
+#### Ícones:
 - Voltar (seta): retorna à tela anterior.
 - Agendar (calendário): acessa a tela de seleção de horários.
 - Agendada (olho): visualiza agendamentos já feitos.
@@ -273,7 +250,7 @@ O guia de estilos tem como objetivo padronizar o desenvolvimento de uma interfac
 - Salas individuais (salinha pequena): indica salas para uso individual.
 - Cancelar (X): cancela um agendamento feito.
 
-## Componentes e Navegação: 
+#### Componentes e Navegação: 
 - Botões: estão na cor primária (roxa) para ações principais e cinza claro para ações secundárias.
 - Inputs: estão em fundo branco com bordas cinza claro para clareza e foco no preenchimento.
 - Confirmações e Alertas: á a caixa modal (como na tela de cancelamento) com botões claros para "Sim" e "Não".
@@ -304,7 +281,7 @@ Aqui está o link para acessar os protótipos pelo figma: https://www.figma.com/
 Um endpoint é o endereço de acesso a uma funcionalidade específica de uma aplicação web. Ele faz parte de uma URL e, junto com o método HTTP (GET, POST, PUT, DELETE), permite que o cliente envie e receba dados do servidor. Cada endpoint está ligado a uma ação, como listar informações, buscar um dado específico, criar, atualizar ou excluir registros no sistema. 
 
 Endpoints Implementados no Sistema Web
-## 1. Usuários 
+#### 1. Usuários 
 - Descrição: Gerencia os usuários do sistema.
 - Endpoints:
     - GET /usuarios - Lista todos os usuários.
@@ -313,7 +290,7 @@ Endpoints Implementados no Sistema Web
     - PUT /usuarios/:id - Atualiza os dados de um usuário existente.
     - DELETE /usuarios/:id - Remove um usuário do sistema.
 
-## 2. Salas 
+#### 2. Salas 
 - Descrição: Controla as salas disponíveis para reserva.
 - Endpoints:
     - GET /salas - Lista todas as salas.
@@ -322,7 +299,7 @@ Endpoints Implementados no Sistema Web
     - PUT /salas/:id - Atualiza os dados de uma sala.
     - DELETE /salas/:id - Exclui uma sala do sistema.
 
-## 3. Horários 
+#### 3. Horários 
 - Descrição: Gerencia os horários disponíveis para agendamentos.
 - Endpoints:
     - GET /horarios - Lista todos os horários.
@@ -331,7 +308,7 @@ Endpoints Implementados no Sistema Web
     - PUT /horarios/:id - Atualiza um horário existente.
     - DELETE /horarios/:id - Remove um horário do sistema.
 
-## 4. Agendamentos
+#### 4. Agendamentos
 - Descrição: Controla os agendamentos realizados pelos usuários.
 - Endpoints:
     - GET /agendamentos - Lista todos os agendamentos.
@@ -340,7 +317,7 @@ Endpoints Implementados no Sistema Web
     - PUT /agendamentos/:id → Atualiza os dados de um agendamento.
     - DELETE /agendamentos/:id - Cancela (exclui) um agendamento.
 
-## 5. Reclamações 
+#### 5. Reclamações 
 - Descrição: Permite aos usuários registrar reclamações sobre as salas ou o sistema.
 - Endpoints:
     - GET /reclamacoes - Lista todas as reclamações.
@@ -351,7 +328,7 @@ Endpoints Implementados no Sistema Web
 
 ### 3.7 Interface e Navegação (Semana 07)
 
-**Estrutura do código frontend** 
+#### Estrutura do código frontend
 O frontend foi desenvolvido utilizando EJS (Embedded JavaScript) como template engine para as views e CSS para a estilização. A estrutura de arquivos segue a organização MVC:
 - views/layout/main.ejs: Layout principal que define a estrutura comum a todas as páginas (cabeçalho, rodapé, inclusão de CSS e scripts).
 - views/layout/login_layout.ejs: Layout específico para a página de login, sem o cabeçalho de navegação.
@@ -362,7 +339,7 @@ O frontend foi desenvolvido utilizando EJS (Embedded JavaScript) como template e
 
 Cada tela do sistema foi desenvolvida para replicar o design dos protótipos, utilizando EJS para a estrutura HTML e CSS para a aparência. Abaixo, estão as principais telas e suas implementações:
 
-**1. Tela de Login**
+#### 1. Tela de Login
 
 <div align="center"> <sub>Tela de Login no site:</sub><br> <img src="../assets/loginsite.png" width="100%" alt="modelo"><br></div> 
 
@@ -482,27 +459,27 @@ body {
 ```
 Esses dois códigos acima são um modelo do código que foi utilizado para todas as telas, cada uma com suas características específicas mas com o mesmo padrão e função.
 
-**2. Tela de Horários**
+#### 2. Tela de Horários
 
 <div align="center"> <sub>Tela de Horários no site:</sub><br> <img src="../assets/horariossite.png" width="100%" alt="modelo"><br></div> 
 
-**3. Tela de Salas Disponíveis**
+#### 3. Tela de Salas Disponíveis
 
 <div align="center"> <sub>Tela de Salas Disponíveis no site:</sub><br> <img src="../assets/salasdisponiveissite.png" width="100%" alt="modelo"><br></div> 
 
-**4. Tela de Informações de Agendamento**
+#### 4. Tela de Informações de Agendamento
 
 <div align="center"> <sub>Tela de Informações de Agendamento no site:</sub><br> <img src="../assets/informacoesdeagendamentosite.png" width="100%" alt="modelo"><br></div> 
 
-**5. Tela de Informações de Sala Agendada**
+#### 5. Tela de Informações de Sala Agendada
 
 <div align="center"> <sub>Tela de Sala Agendada no site:</sub><br> <img src="../assets/salaagendadasite.png" width="100%" alt="modelo"><br></div> 
 
-**6. Tela de Cancelamento**
+#### 6. Tela de Cancelamento
 
 <div align="center"> <sub>Tela de Cancelamento no site:</sub><br> <img src="../assets/cancelarsite.png" width="100%" alt="modelo"><br></div> 
 
-**6. Tela de Suporte**
+#### 7. Tela de Suporte
 
 <div align="center"> <sub>Tela de Suporte:</sub><br> <img src="../assets/suportesite.png" width="100%" alt="modelo"><br></div> 
 
@@ -512,19 +489,57 @@ Esses dois códigos acima são um modelo do código que foi utilizado para todas
 
 ### 4.1 Demonstração do Sistema Web (Semana 8)
 
-*VIDEO: Insira o link do vídeo demonstrativo nesta seção*
-*Descreva e ilustre aqui o desenvolvimento do sistema web completo, explicando brevemente o que foi entregue em termos de código e sistema. Utilize prints de tela para ilustrar.*
+Link do vídeo demontrativo do Sistema Web: https://drive.google.com/file/d/1TfE3tY2GJv-jUVv50mt_i5ggV6xkEcc7/view?usp=drive_link\
+
+#### Desenvolvimento do Sistema Web de Reserva de Salas
+Este projeto teve como objetivo criar um sistema web completo para agendamento de salas, utilizando a arquitetura MVC e tecnologias como Node.js com Express, PostgreSQL, HTML/CSS/JS e EJS para renderização de telas.
+
+**Funcionalidades Entregues**
+
+- Login: Autenticação de usuários com verificação no banco de dados.
+- Agendamento (3 etapas):
+- Agendar1: Escolha de data.
+- Agendar2: Seleção de horário disponível.
+- Agendar3: Seleção de sala e confirmação.
+- Visualização de Agendamentos: Exibe reservas feitas pelo usuário, com opção de cancelamento.
+- Suporte: Formulário para envio de reclamações.
+
+**Backend e Banco de Dados**
+
+A API REST foi desenvolvida com Express para permitir o agendamento e gerenciamento de reservas. O banco de dados PostgreSQL foi estruturado com as seguintes tabelas:
+
+- usuarios: armazena nome, email, senha criptografada e turma do usuário.
+- salas: define as salas disponíveis por número (ex: R07).
+- horarios: contém horários pré-definidos de 30 em 30 minutos (08:00–20:00).
+- magendamentos: registra a reserva vinculando usuário, sala, horário e data.
+- reclamacoes: armazena mensagens enviadas via formulário de suporte.
+
+Cada tabela possui relacionamentos com chave estrangeira e regras como ON, DELETE e CASCADE para manter a integridade dos dados.
 
 ### 4.2 Conclusões e Trabalhos Futuros (Semana 8)
 
-*Indique pontos fortes e pontos a melhorar de maneira geral.*
-*Relacione também quaisquer outras ideias que você tenha para melhorias futuras.*
+#### Pontos Fortes
+- Estrutura organizada com separação clara entre frontend, backend e banco de dados.
+- Interface simples e direta, com telas bem definidas para cada etapa do agendamento.
+- Uso de horários pré-definidos evita conflitos e facilita a seleção.
+- Banco de dados relacional bem modelado, com integridade referencial.
+- Projeto alinhado com boas práticas de desenvolvimento (MVC, REST, modularização).
+- Entrega de um vídeo demonstrativo que facilita a avaliação do funcionamento.
 
+#### Pontos a Melhorar
+- Erro ao agendar: Atualmente, ao tentar confirmar um agendamento, aparece a mensagem "Erro ao realizar agendamento. Tente novamente.". É necessário revisar a rota POST de agendamento e validar o envio correto dos dados.
+- Tela Agendada com dados fixos: Mesmo sem nenhum agendamento, a tela apresenta uma sala fixa. O ideal seria mostrar a mensagem "Nenhuma sala agendada" quando não houver reservas, e exibir as informações corretas apenas quando houver dados reais no banco.
+- Erro no envio de suporte: A tentativa de envio de uma reclamação resulta em "Erro ao enviar solicitação. Tente novamente.". É preciso revisar o formulário e a rota de envio para garantir que os dados estão sendo recebidos corretamente e salvos no banco.
 
+#### Ideias e Melhorias Futuras
+- Corrigir os bugs listados acima para tornar o sistema plenamente funcional.
+- Adicionar feedback visual (alertas ou mensagens de sucesso) após o envio de um agendamento ou reclamação.
+- Implementar uma área administrativa para visualizar todos os agendamentos por sala e data.
+- Melhorar o sistema de autenticação, incluindo recuperação de senha e validação de campos.
+- Inserir indicadores visuais (cores ou ícones) para horários ocupados e disponíveis.
+- Adicionar filtros de busca por sala, data ou horário na tela de visualização de agendamentos.
+- Tornar o layout responsivo, permitindo o uso em dispositivos móveis com boa experiência.
 
 ## <a name="c5"></a>5. Referências
 
-_Incluir as principais referências de seu projeto, para que seu parceiro possa consultar caso ele se interessar em aprofundar. Um exemplo de referência de livro e de site:_<br>
-
----
----
+O projeto foi báseado na estética da faculdade Inteli, portanto a principal referência foi o site e a estética da faculdade. Aqui está o site: https://www.inteli.edu.br/

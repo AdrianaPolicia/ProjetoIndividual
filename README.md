@@ -1,4 +1,4 @@
-# Projeto Individual
+# Agendamento de Salas
 
 Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
 
@@ -55,7 +55,7 @@ Configuração do Banco de Dados
 npm run init-db
 ```
     
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
+Isso criará a tabela `users` no seu banco de dados PostgreSQL com SERIAL como chave primária e inserirá alguns registros de exemplo.
     
 
 Funcionalidades
@@ -63,7 +63,7 @@ Funcionalidades
 
 * **Padrão MVC:** Estrutura organizada em Model, View e Controller.
 * **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
+* **SERIAL:** Utilização de SERIAL como chave primária na tabela `users`.
 * **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
 * **Testes:** Inclui estrutura básica para testes automatizados.
 
@@ -139,6 +139,33 @@ meu-projeto/
 * **`routes/`**: Rotas da aplicação.
 * **`tests/`**: Testes automatizados.
 * **`views/`**: Views da aplicação (se aplicável).
+
+Imagens e Vídeo da Interface
+--------------------
+
+**1. Tela de Login**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/loginsite.png" alt="Tela de Login" width="600"/>
+
+**2. Tela de Horários**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/horariossite.png" alt="Tela de Horários" width="600"/>
+
+**3. Tela de Salas Disponíveis**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/salasdisponiveissite.png" alt="Tela de Salas Disponíveis" width="600"/>
+
+**4. Tela de Informações de Agendamento**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/informacoesdeagendamentosite.png" alt="Tela de Informações de Agendamento" width="600"/>
+
+**5. Tela de Informações de Sala Agendada**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/salaagendadasite.png" alt="Tela de Sala Agendada" width="600"/>
+
+**6. Tela de Cancelamento**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/cancelarsite.png" alt="Tela de Cancelamento" width="600"/>
+
+**7. Tela de Suporte**
+<img src="projeto-final/meu-projeto/meu-projeto/assets/suportesite.png" alt="Tela de Suporte" width="600"/>
+
+**Link para o Vídeo**
+Aqui está o link do vídeo demontrativo do Sistema Web: https://drive.google.com/file/d/1TfE3tY2GJv-jUVv50mt_i5ggV6xkEcc7/view?usp=drive_link\
 
 Contribuição
 ------------
