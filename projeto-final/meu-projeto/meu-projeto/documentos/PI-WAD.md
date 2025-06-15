@@ -261,18 +261,25 @@ Para mais informações sobre o Layout Geral do projeto e uma visualização mel
 Um protótipo de alta fidelidade é uma representação visual e funcional muito próxima do produto final. Ele simula de forma realista tanto o design visual quanto a interatividade entre telas. Assim, abaixo é possível visualizar os protótipos deste projeto:
 
 <div align="center"> <sub>Protótipo da tela de login:</sub><br> <img src="../assets/Login Protótipo.png" width="100%" alt="modelo"><br></div> 
+A tela de Login é a porta de entrada do sistema, onde o usuário insere seu e-mail institucional e senha para acessar a plataforma. O design utiliza um card branco com cantos arredondados sobre uma imagem do campus do Inteli, criando uma conexão visual com o ambiente físico da instituição. O contraste entre o fundo e o card garante legibilidade, enquanto a simplicidade da interface reduz distrações, focando a atenção do usuário no preenchimento dos dados.
 
 <div align="center"> <sub>Protótipo da primeira tela de agendamento:</sub><br> <img src="../assets/Agendar1 Protótipo.png" width="100%" alt="modelo"><br></div> 
+Na tela Agendar1, o usuário escolhe o horário desejado para realizar a reserva da sala. Os horários são dispostos em botões grandes, claros e bem espaçados, organizados em uma grade limpa e intuitiva. Essa escolha de layout prioriza a facilidade de navegação e reduz a possibilidade de erros.
 
 <div align="center"> <sub>Protótipo da segunda tela de agendamento:</sub><br> <img src="../assets/Agendar2 Protótipo.png" width="100%" alt="modelo"><br></div> 
+A tela Agendar2 apresenta as salas disponíveis de acordo com o horário selecionado anteriormente. Cada sala é representada por um botão que combina um ícone sugestivo (como setas ou portas) e o código da sala, como R01 ou R03. O design aqui é minimalista, focando em oferecer uma escolha rápida e clara, facilitando a tomada de decisão do usuário sem gerar sobrecarga de informações.
 
 <div align="center"> <sub>Protótipo da terceira tela de agendamento:</sub><br> <img src="../assets/Agendar3 Protótipo.png" width="100%" alt="modelo"><br></div> 
+Na tela Agendar3, o usuário preenche as informações necessárias para finalizar o agendamento, como nome completo, turma e grupo. O layout é simples, com campos de entrada bem distribuídos e um botão de ação em roxo, que se destaca na interface. Essa abordagem torna o processo de confirmação de dados mais direto, intuitivo e eficiente, garantindo que os registros sejam feitos corretamente.
 
 <div align="center"> <sub>Protótipo da primeira tela de agendada:</sub><br> <img src="../assets/Agendada1 Protótipo.png" width="100%" alt="modelo"><br></div> 
+A tela Agendada1 funciona como um painel de visualização dos agendamentos já realizados. Nela, o usuário vê de forma clara a sala e o horário reservados, apresentados dentro de um card com fundo neutro e texto bem centralizado. Um botão de cancelamento, representado por um ícone de "X", fica visível, oferecendo controle direto sobre os agendamentos ativos.
 
 <div align="center"> <sub>Protótipo da segunda tela de agendada:</sub><br> <img src="../assets/Agendada2 Protótipo.png" width="100%" alt="modelo"><br></div> 
+A tela Agendada2 serve como uma etapa de confirmação para o cancelamento de uma reserva. Ela exibe uma pergunta clara — “Tem certeza que deseja cancelar?” — e apresenta dois botões, “Sim” e “Não”, bem destacados. Esse design direto tem como objetivo evitar que o usuário cometa erros acidentais, adicionando uma camada de segurança antes de realizar ações irreversíveis.
 
 <div align="center"> <sub>Protótipo da tela de suporte:</sub><br> <img src="../assets/Suporte Protótipo.png" width="100%" alt="modelo"><br></div> 
+A tela de Suporte oferece um formulário para que o usuário possa relatar problemas ou situações adversas, como mal uso das salas ou defeitos estruturais. O layout é bem organizado, com campos específicos para nome da sala, horário de uso e uma descrição do problema. A interface segue o mesmo padrão visual do sistema, mantendo a consistência e tornando o processo de comunicação ágil e claro.
 
 Aqui está o link para acessar os protótipos pelo figma: https://www.figma.com/design/cnJg4qv0v5QnYuTUXReWOh/ux?node-id=2065-197&m=dev&t=fm6ftigwHI33YodZ-1
 
@@ -489,10 +496,18 @@ Esses dois códigos acima são um modelo do código que foi utilizado para todas
 
 ### 4.1 Demonstração do Sistema Web (Semana 8)
 
-Link do vídeo demontrativo do Sistema Web: https://drive.google.com/file/d/1TfE3tY2GJv-jUVv50mt_i5ggV6xkEcc7/view?usp=drive_link\
+Link do vídeo demontrativo do Sistema Web: https://drive.google.com/file/d/1RV5s96DRIVAtys5mcq6B4skezPj7xJXC/view?usp=sharing
 
 #### Desenvolvimento do Sistema Web de Reserva de Salas
 Este projeto teve como objetivo criar um sistema web completo para agendamento de salas, utilizando a arquitetura MVC e tecnologias como Node.js com Express, PostgreSQL, HTML/CSS/JS e EJS para renderização de telas.
+
+**MVC (Model-View-Controller)**
+
+O projeto segue o padrão MVC, que organiza o código em três partes:
+
+- Model: Regras de negócio e acesso ao banco (ex.: modelos de usuários, salas e agendamentos).
+- View: Telas e interfaces que os usuários interagem (HTML, CSS, JavaScript).
+- Controller: Faz a ponte entre View e Model, recebendo requisições, processando dados e retornando respostas.
 
 **Funcionalidades Entregues**
 
